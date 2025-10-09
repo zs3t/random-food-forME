@@ -1,0 +1,68 @@
+:root {
+  --background: oklch(99.1% 0.009 76.5);
+  --foreground: oklch(26.6% 0.021 262.1);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(26.6% 0.021 262.1);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(15% 0.05 240);
+  --primary: oklch(67.4% 0.165 41.5);
+  --primary-foreground: oklch(100% 0 0);
+  --secondary: oklch(97.2% 0.022 66.8);
+  --secondary-foreground: oklch(26.6% 0.021 262.1);
+  --muted: oklch(94.9% 0.035 52.8);
+  --muted-foreground: oklch(53% 0.008 266.6);
+  --accent: oklch(43.5% 0.081 150.1);
+  --accent-foreground: oklch(100% 0 0);
+  --destructive: oklch(70% 0.15 10);
+  --destructive-foreground: oklch(10% 0 0);
+  --border: oklch(94.2% 0.038 49.3);
+  --input: oklch(94.2% 0.038 49.3);
+  --ring: oklch(55% 0.15 270);
+  --chart-1: oklch(64.6% 0.222 41.116);
+  --chart-2: oklch(60% 0.118 184.704);
+  --chart-3: oklch(39.8% 0.07 227.392);
+  --chart-4: oklch(82.8% 0.189 84.429);
+  --chart-5: oklch(76.9% 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: oklch(95% 0.01 240);
+  --sidebar-foreground: oklch(25% 0.05 240);
+  --sidebar-primary: oklch(50% 0.15 270);
+  --sidebar-primary-foreground: oklch(95% 0 0);
+  --sidebar-accent: oklch(85% 0.03 240);
+  --sidebar-accent-foreground: oklch(35% 0.05 240);
+  --sidebar-border: oklch(80% 0.01 240);
+  --sidebar-ring: oklch(55% 0.1 270);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(10% 0.009 262.1);
+    --foreground: oklch(96.3% 0.007 76.5);
+    --card: oklch(18% 0.019 262.1);
+    --card-foreground: oklch(96.3% 0.007 76.5);
+    --popover: oklch(20% 0.02 262.1);
+    --popover-foreground: oklch(95% 0.01 262.1);
+    --primary: oklch(71.8% 0.137 45.4);
+    --accent: oklch(59.9% 0.067 150.1);
+    --border: oklch(24.8% 0.016 262.1);
+    --input: oklch(24.8% 0.016 262.1);
+    --secondary: oklch(18% 0.019 262.1);
+    --muted: oklch(24.8% 0.016 262.1);
+    --muted-foreground: oklch(62% 0.008 266.6);
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: oklch(from var(--ring) h s l / 0.5);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
