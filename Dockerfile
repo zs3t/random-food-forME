@@ -55,8 +55,8 @@ COPY . .
 RUN mkdir -p public
 
 # 设置环境变量
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 
 # 构建 Next.js
 RUN pnpm run build
@@ -76,8 +76,8 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 # 设置环境变量
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 ARG BACKEND_HOST=backend
 ARG BACKEND_PORT=9091
 ENV BACKEND_HOST=${BACKEND_HOST}
@@ -98,8 +98,8 @@ USER nextjs
 # 暴露端口
 EXPOSE 9090
 
-ENV PORT 9090
-ENV HOSTNAME "0.0.0.0"
+ENV PORT=9090
+ENV HOSTNAME=0.0.0.0
 
 # 启动应用
 CMD ["node", "server.js"]
