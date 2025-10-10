@@ -75,6 +75,7 @@ pids/
 *.sqlite
 *.sqlite3
 *.db
+!food_db.sqlite
 
 # SQLite journaling/write-ahead logs
 *.sqlite-journal
