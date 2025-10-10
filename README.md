@@ -1,6 +1,7 @@
 # Random Food 美食推荐系统
 
-一个基于 Next.js + Express 的美食随机推荐应用，支持美食管理和智能推荐。
+一个基于 Next.js + Express 的美食随机推荐应用，支持美食管理和智能推荐。默认美食菜单来源：
+[CookLikeHOC归纳整理的《老乡鸡菜品》](https://github.com/Gar-b-age/CookLikeHOC)
 
 ## 🚢 部署指南
 
