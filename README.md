@@ -63,15 +63,16 @@
    git clone https://github.com/zs3t/random-food-forME.git
    cd random-food-forME
    ```
-2. 准备环境文件与数据库：
+2. 准备环境文件与数据库（首次部署必做）：
    ```bash
    cp .env.docker .env         # 如需自定义端口可修改该文件
    mkdir -p data logs/backend
    cp backend/food_db.sqlite data/food_db.sqlite
    ```
-3. 构建并启动服务：
+3. 拉取镜像并启动服务：
    ```bash
-   docker compose build
+   # 镜像托管在 Docker Hub 公共仓库
+   docker compose pull                           # 拉取前后端镜像
    docker compose up -d
    ```
 4. 验证与运维：
