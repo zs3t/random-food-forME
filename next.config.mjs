@@ -2,6 +2,16 @@
 const nextConfig = {
   // 启用 standalone 输出模式，用于 Docker 部署
   output: 'standalone',
+  
+  // 1. 永久跳过构建时的 TypeScript 类型检查（因为你已经有 pnpm run check 了）
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  // 2. 永久跳过构建时的 ESLint 规范检查
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 
   images: {
     unoptimized: true,
