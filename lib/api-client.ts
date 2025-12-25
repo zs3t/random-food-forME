@@ -5,7 +5,7 @@
 
 import { Food, DbFood, FoodInput } from '@/types/food'
 import { API_BASE_URL } from '@/lib/api'
-import { parseFetchError, withRetry, AppError } from '@/lib/errors'
+import { parseFetchError, withRetry } from '@/lib/errors'
 
 /**
  * API 请求配置

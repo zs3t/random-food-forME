@@ -34,11 +34,8 @@ function DropdownMenuTrigger({
 function DropdownMenuContent({
   className,
   sideOffset = 4,
-  size,
   ...props
-}: React.ComponentProps<typeof DropdownMenuPrimitive.Content> & {
-  size?: "sm" | "default" | "lg" | "icon" | null
-}) {
+}: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) {
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content

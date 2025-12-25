@@ -9,7 +9,8 @@
     "start": "next start -H 127.0.0.1 -p 9090",
     "dev:all": "concurrently --names \"NEXT,API\" --prefix-colors \"cyan,green\" \"npm run dev\" \"npm run start-backend\"",
     "start-backend": "cd backend && node --no-deprecation index.js",
-    "clean": "rm -rf .next node_modules/.cache"
+    "clean": "rm -rf .next node_modules/.cache",
+    "check": "pnpm audit && pnpm run lint && pnpm exec tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.4",
@@ -23,7 +24,7 @@
     "clsx": "^2.1.1",
     "geist": "latest",
     "lucide-react": "^0.454.0",
-    "next": "^14.2.33",
+    "next": "^14.2.35",
     "next-themes": "^0.4.6",
     "react": "^18",
     "react-dom": "^18",
