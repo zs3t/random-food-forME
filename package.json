@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "NODE_OPTIONS='--no-deprecation' next dev -H 0.0.0.0 -p 9090",
+    "build": "next build",
+    "postbuild": "mkdir -p .next/standalone/.next && cp -r .next/static .next/standalone/.next/ && cp -r .next/server .next/standalone/.next/",
     "lint": "next lint",
     "start": "next start -H 127.0.0.1 -p 9090",
-    "dev:all": "concurrently --names \"NEXT,API\" --prefix-colors \"cyan,green\" \"npm run dev\" \"npm run start-backend\"",
+    "dev:all": "concurrently --names \"NEXT,API\" --prefix-colors \"cyan,green\" \"pnpm run dev\" \"pnpm run start-backend\"",
     "start-backend": "cd backend && node --no-deprecation index.js",
     "clean": "rm -rf .next node_modules/.cache",
     "check": "pnpm audit && pnpm run lint && pnpm exec tsc --noEmit"
@@ -20,6 +21,7 @@
     "@radix-ui/react-slot": "1.1.1",
     "@radix-ui/react-toast": "1.2.4",
     "@vercel/analytics": "latest",
+    "better-sqlite3": "12.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "geist": "latest",
@@ -40,7 +42,7 @@
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.1",
     "eslint": "^8.57.1",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "14.2.35",
     "postcss": "^8.5.6",
     "postcss-import": "^16.1.1",
     "tailwindcss": "3.4.18",
@@ -48,7 +50,8 @@
   },
   "pnpm": {
     "overrides": {
-      "js-yaml": "4.1.1"
+      "js-yaml": "4.1.1",
+      "glob": ">=10.5.0"
     },
     "onlyBuiltDependencies": [
       "better-sqlite3"

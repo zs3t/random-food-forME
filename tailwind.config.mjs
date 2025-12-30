@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-import { fontFamily } from "tailwindcss/defaultTheme"
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 
+// 使用 require 引入 defaultTheme
+const { fontFamily } = require('tailwindcss/defaultTheme');
 const config = {
   darkMode: ["class"],
   content: [
